@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Bright Grid Solution and Smart Digital Innovation </title>
+  <link href="styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header>
+   <h1> Welcome to BrightGrid Solution and Digital Innovation </h1>
+   <img alt="Banner Image" class="banner" src="banner.jpg"/>
+  </header>
+  <nav>
+   <a href="#">Home</a>
+   <a href="#" id="aboutBtn">About</a>
+   <a href="#" id="servicesBtn">Services</a>
+   <a href="#" id="contactBtn">Contact</a>
+  </nav>
+  <!-- Services Modal -->
+<div id="servicesModal" class="modal">
+  <div class="modal-content">
+    <span class="close services-close">&times;</span>
+    <h3>Our Services</h3>
+    <ol>
+      <li>Solar System Design and Installation</li>
+      <li>Networking Design and System Administration</li>
+      <li>CCTV Installation and Configuration</li>
+     <li> Exploring Opportunities in AI with integration to real Problem Solution </li>
+      <li>Data Analysis</li>
+      <li>Web Design and Development</li>
+      <li>Educative Training and Tutorials</li>
+    </ol>
+  </div>
+</div>
+  <!-- About Modal -->
+  <div class="modal" id="aboutModal">
+   <div class="modal-content">
+    <span class="close"> ×</span>
+    <h3>BrightGrid Tech Solutions</h3>
+    <p> We specialize in Solar system Design and Installation, Website development, Data Analysis, CCTV setup, and hands-on training. Our mission is to deliver smart, secure, and sustainable tech solutions across Nigeria and beyond.
+   </p>
+   </div>
+  </div>
+  
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal">
+   <div class="modal-content">
+    <span class="close contact-close"> ×</span>
+    <h3>Contact Us</h3>
+    <p>📞 Phone: +234 8064164344</p>
+    <p>📞 Phone: +234 8033105822</p>
+    <p>📧 Email: aliyubiniyaminu75@gmail.com</p>
+   </div>
+  </div>
+  
+  <section class="intro">
+   <h2>About Us </h2>
+   <img alt="Aliyu's Photo" class="profile" src="profile.jpg"/>
+   <p><small><b>Engr. Aliyu Biniyaminu (CEO)</b></small><p>
+     <p> I Specialized in Electrical and Electronic Engineering, with a Diverse Skills in Networking, Data Analysis and Web development.</p>
+   <!-- Core Founder -->
+  <div class="core-founder">
+    <img src="cofounder.jpg" alt="Co-founder Photo" class="profile">
+    <p> <small><b>Engr. Bara'u Magaji (Core Founder)</b></small></p>
+   <p> I Specialized in Mordern Control and Automation Engineering with a Diverse Skills in Artificial Intelligence  </p>
+  </div>
+</section>
+ 
+  </section>
+  <section class="services">
+   <h3> Our Services </h3>
+   <ul>
+    <b><li> </b> Solar System Design and Installation </li>
+    <li> Networking Design and System Administration </li>
+    <li> CCTV Installation and configuration </li>
+    <li> Exploring Opportunities in AI with integration to real Problem Solution</li>
+    <li> Data Analysis </li>
+    <li> Web Design and Developmet</li>
+    <li> Educative Training and Tutorials </li>
+   </ul>
+  </section>
+  <footer>
+   <p> © 2025 Aliyu. All rights reserved.</p>
+   <div class="social-links">
+    <a href="https://facebook.com/aliyu.biniyaminu" target="_blank"> Facebook </a>|
+    <a href="https://twitter.com/aliyu55708917" target="_blank"> Twitter</a>|
+    <a href="https://linkedin.com/in/aliyu-biniyaminu-1b15a135a/" target="_blank"> LinkedIn</a>|
+    <a href="https://wa.me/2348064164344" target="_blank"> WhatsApp </a>
+   </div>
+  </footer>
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+  const aboutModal = document.getElementById("aboutModal");
+  const aboutBtn = document.getElementById("aboutBtn");
+  const aboutClose = document.querySelector(".close");
+
+  aboutBtn.onclick = function (e) {
+    e.preventDefault();
+    aboutModal.style.display = "block";
+  };
+
+  aboutClose.onclick = function () {
+    aboutModal.style.display = "none";
+  };
+
+  const contactModal = document.getElementById("contactModal");
+  const contactBtn = document.getElementById("contactBtn");
+  const contactClose = document.querySelector(".contact-close");
+
+  contactBtn.onclick = function (e) {
+    e.preventDefault();
+    contactModal.style.display = "block";
+  };
+
+  contactClose.onclick = function () {
+    contactModal.style.display = "none";
+  };
+
+  window.onclick = function (e) {
+    if (e.target == aboutModal) aboutModal.style.display = "none";
+    if (e.target == contactModal) contactModal.style.display = "none";
+  };
+    const servicesModal = document.getElementById("servicesModal");
+const servicesBtn = document.getElementById("servicesBtn");
+const servicesClose = document.querySelector(".services-close");
+
+servicesBtn.onclick = function (e) {
+  e.preventDefault();
+  servicesModal.style.display = "block";
+};
+
+servicesClose.onclick = function () {
+  servicesModal.style.display = "none";
+};
+
+// Include in the outside-click close check:
+if (e.target == servicesModal) servicesModal.style.display = "none";
+
+});
+  </script>
+ </body>
+</html>
