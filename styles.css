@@ -1,0 +1,2371 @@
+/* =========================================
+   EUPHORIAN NIGERIA LIMITED
+   Professional Website Styles
+   ========================================= */
+
+
+/* =========================================
+   1. GLOBAL SETTINGS
+   ========================================= */
+
+:root {
+    --primary: #0b6b3a;
+    --primary-dark: #064c2a;
+    --secondary: #8bc34a;
+
+    --dark: #17221b;
+    --text: #374151;
+    --muted: #6b7280;
+
+    --light: #f4f8f5;
+    --white: #ffffff;
+
+    --border: #e5e7eb;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    --radius: 16px;
+
+    --container: 1150px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    background: var(--white);
+
+    color: var(--text);
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    color: inherit;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+button,
+a {
+    transition:
+        all 0.3s ease;
+}
+
+
+/* ================= HERO SECTION ================= */
+
+.hero {
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+
+    background-image: url("images/hero-background.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Soft dark overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.22);
+
+    z-index: 1;
+}
+
+
+/* ================= HERO CONTENT ================= */
+
+.hero-content {
+    position: absolute;
+
+    top: 55px;
+    left: 7%;
+
+    z-index: 2;
+
+    width: 520px;
+    max-width: 45%;
+
+    padding: 0;
+
+    color: #ffffff;
+}
+
+
+/* Main heading */
+.hero-content h1 {
+    font-size: clamp(38px, 4vw, 58px);
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    margin: 0 0 55px;
+
+    color: #ffffff;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.65);
+}
+
+
+/* Hide extra Hero text */
+.hero-content .hero-subtitle,
+.hero-content > p {
+    display: none;
+}
+
+
+/* ================= MOBILE HERO ================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 620px;
+
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+
+    /* Move hero text away from the company logo */
+    .hero-content {
+        top: 25px;
+        left: 6%;
+
+        width: 88%;
+        max-width: none;
+
+        padding: 0;
+
+        text-align: left;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(34px, 9vw, 44px);
+
+        line-height: 1.05;
+
+        margin-bottom: 18px;
+
+        text-align: left;
+    }
+
+    .hero-content .hero-subtitle {
+        font-size: 16px;
+
+        line-height: 1.5;
+
+        margin-bottom: 18px;
+
+        text-align: left;
+    }
+
+    .hero-content p {
+        max-width: 100%;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin-bottom: 24px;
+
+        text-align: left;
+    }
+
+}
+
+/* =========================================
+   4. NAVIGATION
+   ========================================= */
+
+.navbar {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.nav-container {
+    max-width: var(--container);
+
+    margin: auto;
+
+    min-height: 72px;
+
+    padding:
+        0 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.logo {
+    color: var(--primary-dark);
+
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.nav-links a {
+    color: var(--dark);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    position: relative;
+}
+
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--primary);
+
+    transition: width 0.3s ease;
+}
+
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   5. SECTIONS
+   ========================================= */
+
+.section {
+    max-width: var(--container);
+
+    margin: 0 auto;
+
+    padding:
+        90px 20px;
+}
+
+
+.section-heading {
+    max-width: 750px;
+
+    margin:
+        0 auto 50px;
+
+    text-align: center;
+}
+
+
+.section-heading span {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: var(--primary);
+
+    font-size: 0.85rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.section-heading h2 {
+    color: var(--dark);
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    margin-bottom: 15px;
+}
+
+
+.section-heading p {
+    color: var(--muted);
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   6. ABOUT SECTION
+   ========================================= */
+
+.intro {
+    background: var(--white);
+    padding: 90px 20px;
+}
+
+/* About content area */
+.about-content {
+    max-width: 1050px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* About paragraphs */
+.about-text {
+    max-width: 950px;
+    margin: 35px auto 0;
+}
+
+.about-text p {
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: var(--text);
+    margin: 0 auto 24px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Give the last paragraph a clean ending */
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   ABOUT SECTION - TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .intro {
+        padding: 70px 20px;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+    .about-text {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* =========================================
+   ABOUT SECTION - MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .intro {
+        padding: 60px 18px;
+    }
+
+    .about-text {
+        margin-top: 25px;
+    }
+
+    .about-text p {
+        font-size: 0.98rem;
+        line-height: 1.75;
+        text-align: left;
+        margin-bottom: 18px;
+    }
+}
+
+
+/* =========================================
+   7. FOUNDERS
+   ========================================= */
+
+.founders {
+    max-width: none;
+
+    background: var(--light);
+}
+
+
+.founders .section-heading,
+.founder-grid {
+    max-width: var(--container);
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+.founder-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+    padding:
+        0 20px;
+}
+
+
+.founder-card {
+    background: var(--white);
+
+    padding: 35px 25px;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.founder-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+.profile {
+    width: 150px;
+
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    margin:
+        0 auto 20px;
+
+    border:
+        5px solid var(--light);
+}
+
+
+.founder-card h3 {
+    color: var(--dark);
+
+    font-size: 1.35rem;
+
+    margin-bottom: 5px;
+}
+
+
+.founder-card .role {
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+
+.founder-card p:last-child {
+    color: var(--muted);
+}
+
+
+/* =========================================
+   8. SERVICES
+   ========================================= */
+
+.services {
+    background: var(--white);
+}
+
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 25px;
+}
+
+/* Balanced layout for 7 services */
+
+.service-card:nth-child(1),
+.service-card:nth-child(2) {
+    grid-column: span 3;
+}
+
+
+.service-card:nth-child(3),
+.service-card:nth-child(4),
+.service-card:nth-child(5) {
+    grid-column: span 2;
+}
+
+
+.service-card:nth-child(6),
+.service-card:nth-child(7) {
+    grid-column: span 3;
+}
+
+
+.service-card {
+    background: var(--white);
+
+    border:
+        1px solid var(--border);
+
+    padding: 30px 22px;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.service-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.12);
+
+    border-color: var(--secondary);
+}
+
+
+.service-icon {
+    width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin:
+        0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #eaf6ef;
+
+    font-size: 1.8rem;
+}
+
+
+.service-card h3 {
+    color: var(--dark);
+
+    font-size: 1.15rem;
+
+    margin-bottom: 12px;
+}
+
+
+.service-card p {
+    color: var(--muted);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================
+   9. WHY CHOOSE US
+   ========================================= */
+
+.why-us {
+    max-width: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+
+    color: var(--white);
+}
+
+
+.why-us .section-heading h2 {
+    color: var(--white);
+}
+
+
+.why-us .section-heading span {
+    color: var(--secondary);
+}
+
+
+.features-grid {
+    max-width: var(--container);
+
+    margin: auto;
+
+    padding:
+        0 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.feature {
+    padding: 30px 20px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: var(--radius);
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    text-align: center;
+}
+
+
+.feature h3 {
+    margin-bottom: 12px;
+
+    color: var(--white);
+}
+
+
+.feature p {
+    color:
+        rgba(255, 255, 255, 0.82);
+}
+
+
+/* =========================================
+   10. CONTACT
+   ========================================= */
+
+.contact {
+    background: var(--light);
+}
+
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.contact-card {
+    background: var(--white);
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+
+.contact-card h3 {
+    color: var(--primary-dark);
+
+    margin-bottom: 12px;
+}
+
+
+.contact-card a {
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+}
+
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   11. FOOTER
+   ========================================= */
+
+footer {
+    background: #071b10;
+
+    color: var(--white);
+
+    padding:
+        50px 20px 25px;
+
+    text-align: center;
+}
+
+
+.footer-content {
+    max-width: var(--container);
+
+    margin: auto;
+}
+
+
+.footer-content h3 {
+    font-size: 1.5rem;
+
+    margin-bottom: 10px;
+}
+
+
+.footer-content > p {
+    color:
+        rgba(255, 255, 255, 0.75);
+}
+
+
+.social-links {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin:
+        25px 0;
+}
+
+
+.social-links a {
+    display: inline-block;
+
+    padding:
+        9px 16px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 50px;
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+}
+
+
+.social-links a:hover {
+    background: var(--secondary);
+
+    color: var(--dark);
+
+    border-color: var(--secondary);
+
+    transform: translateY(-2px);
+}
+
+
+.copyright {
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    font-size: 0.85rem;
+
+    color:
+        rgba(255, 255, 255, 0.6);
+}
+
+
+/* =========================================
+   12. MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .services-grid,
+    .features-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+
+    .nav-container {
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        padding:
+            15px 20px;
+    }
+
+
+    .nav-links {
+        gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+
+    .section {
+        padding:
+            65px 20px;
+    }
+
+
+    .founder-grid,
+    .services-grid,
+    .features-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .service-card,
+    .founder-card,
+    .feature,
+    .contact-card {
+        max-width: 500px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .hero-content {
+        padding:
+            30px 15px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+
+    .hero-content p:first-of-type {
+        font-size: 1.25rem;
+    }
+
+
+    .hero-content p:last-of-type {
+        font-size: 0.95rem;
+    }
+
+
+    .btn {
+        width: 100%;
+
+        max-width: 280px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 1.9rem;
+    }
+
+
+    .profile {
+        width: 130px;
+
+        height: 130px;
+    }
+
+}
+
+/* =========================================
+   SERVICE LINKS & QUOTE SECTION
+   ========================================= */
+
+.service-link {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 10px 18px;
+
+    background: var(--primary);
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: 0.9rem;
+
+    border-radius: 50px;
+
+    transition: all 0.3s ease;
+}
+
+
+.service-link:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   PRICING / REQUEST A QUOTE NOTICE
+   ========================================= */
+
+.pricing-notice {
+    grid-column: 2 / 6;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin: 10px auto 0;
+
+    padding: 35px 45px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #f1f8f4,
+        #ffffff
+    );
+
+    border: 1px solid rgba(11, 107, 58, 0.12);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+
+    box-sizing: border-box;
+}
+
+
+.pricing-notice h3 {
+    margin-bottom: 12px;
+
+    font-size: 1.7rem;
+
+    color: var(--primary-dark);
+}
+
+
+.pricing-notice p {
+    max-width: 700px;
+
+    margin: 8px auto;
+
+    line-height: 1.7;
+
+    color: var(--text);
+}
+
+
+.pricing-notice strong {
+    color: var(--primary-dark);
+}
+
+
+.pricing-notice .btn {
+    display: inline-block;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   MOBILE PRICING NOTICE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .pricing-notice {
+        grid-column: 1 / -1;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 5px;
+
+        padding: 30px 20px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .pricing-notice {
+        padding: 25px 15px;
+    }
+
+    .pricing-notice h3 {
+        font-size: 1.45rem;
+    }
+
+    .pricing-notice p {
+        font-size: 0.95rem;
+    }
+
+}
+
+/* =========================================
+   REQUEST A QUOTE FORM
+   ========================================= */
+
+.quote-form-container {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    padding: 30px 20px;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    overflow-y: auto;
+}
+
+
+.quote-form-container.active {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.quote-form {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 40px;
+
+    background: var(--white);
+
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.25);
+
+    text-align: left;
+}
+
+
+.quote-form .section-heading {
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+
+.quote-close {
+    position: absolute;
+
+    top: 15px;
+
+    right: 20px;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f5f3;
+
+    color: var(--dark);
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+.quote-close:hover {
+    background: var(--primary);
+
+    color: var(--white);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--dark);
+
+    font-weight: 700;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: #fafcfb;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(11, 107, 58, 0.12);
+
+    background: var(--white);
+}
+
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+
+.quote-submit {
+    width: 100%;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+}
+
+
+@media (max-width: 600px) {
+
+    .quote-form {
+        padding: 30px 20px;
+
+        border-radius: 12px;
+    }
+
+    .quote-form-container {
+        padding: 15px;
+    }
+
+}
+
+
+
+/* =========================================
+   PRICING & PACKAGES
+   ========================================= */
+
+.pricing-section {
+    max-width: var(--container);
+    margin: 60px auto 0;
+    padding: 50px 20px;
+    background: var(--light);
+    border-radius: var(--radius);
+}
+
+
+/* Heading */
+
+.pricing-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.pricing-heading span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.pricing-heading h3 {
+    color: var(--dark);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 12px;
+}
+
+.pricing-heading p {
+    color: var(--muted);
+}
+
+
+/* Location buttons */
+
+.pricing-location {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.location-btn {
+    border: 2px solid var(--primary);
+    background: var(--white);
+    color: var(--primary);
+    padding: 11px 28px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.location-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.location-btn.active {
+    background: var(--primary);
+    color: var(--white);
+}
+
+
+/* Hide location prices */
+
+.price-location-content {
+    display: none;
+}
+
+.price-location-content.active {
+    display: block;
+}
+
+
+/* Price columns */
+
+.price-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* Price card */
+
+.price-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+
+/* Price card header */
+
+.price-card-header {
+    padding: 18px 22px;
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+}
+
+.price-card-header h4 {
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+.property-header {
+    background: var(--primary-dark);
+}
+
+
+/* Individual price */
+
+.price-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 17px 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.price-item:last-child {
+    border-bottom: none;
+}
+
+.price-item div {
+    min-width: 0;
+}
+
+.price-item strong {
+    display: block;
+    color: var(--dark);
+    font-size: 0.98rem;
+}
+
+.price-item small {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.price-item span {
+    flex-shrink: 0;
+    color: var(--primary);
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+
+/* VAT */
+
+.vat-note {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+    padding: 8px 20px;
+
+    background: #eaf6ef;
+    color: var(--primary-dark);
+
+    border-radius: 50px;
+
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+/* =========================================
+   REQUEST A QUOTE BUTTON
+   ========================================= */
+
+.pricing-action {
+    text-align: center;
+    margin-top: 28px;
+}
+
+
+/* Request a Quote button */
+
+.pricing-action a,
+.pricing-action button {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background: var(--primary);
+    color: var(--white);
+
+    border: none;
+    border-radius: 50px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(11, 107, 58, 0.18);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Hover effect */
+
+.pricing-action a:hover,
+.pricing-action button:hover {
+    background: var(--secondary);
+    color: var(--dark);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(11, 107, 58, 0.22);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .pricing-action {
+        margin-top: 25px;
+    }
+
+    .pricing-action a,
+    .pricing-action button {
+        width: auto;
+        min-width: 180px;
+        padding: 13px 24px;
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================================
+   PRICING MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .pricing-section {
+        margin-top: 40px;
+        padding: 35px 15px;
+        border-radius: 12px;
+    }
+
+    .price-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-section .price-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.pricing-section .price-card {
+    width: 100%;
+}
+
+.pricing-section .price-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.pricing-section .price-item div {
+    flex: 1;
+}
+
+.pricing-section .price-item span {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+    .price-item {
+        padding: 15px;
+    }
+
+    .price-item span {
+        font-size: 0.95rem;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .pricing-location {
+        gap: 8px;
+    }
+
+    .location-btn {
+        flex: 1;
+        padding: 10px 15px;
+    }
+
+    .price-item {
+        align-items: flex-start;
+    }
+
+    .price-item strong {
+        font-size: 0.9rem;
+    }
+
+    .price-item small {
+        font-size: 0.75rem;
+    }
+
+    .price-item span {
+        font-size: 0.9rem;
+    }
+
+}
+
+/* =========================================
+   FIX: PRICING SECTION FULL WIDTH
+   ========================================= */
+
+.pricing-section {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.pricing-section .price-columns {
+    width: 100%;
+}
+
+/* =========================================
+   PRICE CARD HEADER + VAT
+   ========================================= */
+
+.price-card-header {
+    padding: 18px 22px;
+    background: var(--primary);
+    color: var(--white);
+    text-align: left;
+}
+
+.price-card-header h4 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.price-card-header small {
+    display: block;
+    margin-top: 5px;
+
+    color: #d9f5e4;
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.property-header {
+    background: var(--primary-dark);
+}
+
+/* =========================================
+   PHOTO GALLERY - LARGE VERSION
+   ========================================= */
+
+.photo-gallery {
+    width: 100%;
+    background: var(--white);
+    padding: 100px 30px;
+    margin: 0;
+    clear: both;
+}
+
+.gallery-container {
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+.gallery-heading {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.gallery-heading .section-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.gallery-heading h2 {
+    color: var(--dark);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin-bottom: 15px;
+}
+
+.gallery-heading p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   LARGE GALLERY GRID
+   ========================================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+
+/* Dark overlay */
+
+.gallery-item::after {
+    content: "🔍 View Fullscreen";
+
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+
+/* =========================================
+   HIDE OLD TEXT OVERLAY
+   ========================================= */
+
+.gallery-overlay {
+    display: none;
+}
+
+
+/* =========================================
+   FULLSCREEN LIGHTBOX
+   ========================================= */
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.94);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 99999;
+
+    padding: 40px;
+}
+
+.gallery-lightbox.active {
+    display: flex;
+}
+
+
+/* Fullscreen image */
+
+.gallery-lightbox img {
+    max-width: 92vw;
+    max-height: 88vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+   ========================================= */
+
+.gallery-close {
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: #ffffff;
+
+    font-size: 2rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background 0.3s ease;
+}
+
+.gallery-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================================
+   PREVIOUS / NEXT BUTTONS
+   ========================================= */
+
+.gallery-prev,
+.gallery-next {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: #ffffff;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background 0.3s ease;
+}
+
+.gallery-prev {
+    left: 25px;
+}
+
+.gallery-next {
+    right: 25px;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================================
+   IMAGE COUNTER
+   ========================================= */
+
+.gallery-counter {
+    position: absolute;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #ffffff;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    padding: 8px 16px;
+
+    border-radius: 20px;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   CONTACT SPACING
+   ========================================= */
+
+.contact {
+    margin-top: 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .photo-gallery {
+        padding: 80px 20px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .photo-gallery {
+        padding: 65px 15px;
+    }
+
+    .gallery-lightbox {
+        padding: 15px;
+    }
+
+    .gallery-lightbox img {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+
+    .gallery-close {
+        top: 15px;
+        right: 15px;
+    }
+
+    .gallery-prev {
+        left: 10px;
+    }
+
+    .gallery-next {
+        right: 10px;
+    }
+
+}
+
+/* =========================================
+   GOOGLE MAP / LOCATION
+   ========================================= */
+
+.map-section {
+    max-width: var(--container);
+
+    margin: 0 auto;
+
+    padding: 80px 20px 90px;
+
+    background: var(--white);
+}
+
+
+.map-section .section-heading {
+    margin-bottom: 40px;
+}
+
+
+.map-container {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: var(--radius);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.10);
+
+    background: #f5f5f5;
+}
+
+
+.map-container iframe {
+    display: block;
+
+    width: 100%;
+
+    min-height: 450px;
+
+    border: 0;
+}
+
+
+/* ================= MAP MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .map-section {
+        padding:
+            60px 20px 70px;
+    }
+
+    .map-container {
+        border-radius: 12px;
+    }
+
+    .map-container iframe {
+        min-height: 350px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .map-section {
+        padding:
+            50px 15px 60px;
+    }
+
+    .map-container iframe {
+        min-height: 300px;
+    }
+
+}
+/* =========================================
+   PROFESSIONAL CONTACT SECTION
+   ========================================= */
+
+.contact {
+    background: var(--light);
+
+    padding: 0;
+}
+
+
+.contact .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+/* Contact cards */
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    max-width: var(--container);
+
+    margin: 0 auto;
+}
+
+
+.contact-card {
+    background: var(--white);
+
+    padding: 35px 22px;
+
+    text-align: center;
+
+    border-radius: var(--radius);
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.contact-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Contact icons */
+
+.contact-icon {
+    width: 60px;
+
+    height: 60px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eaf6ef;
+
+    font-size: 1.6rem;
+}
+
+
+.contact-card h3 {
+    color: var(--primary-dark);
+
+    font-size: 1.15rem;
+
+    margin-bottom: 12px;
+}
+
+
+.contact-card p {
+    color: var(--muted);
+
+    margin-bottom: 8px;
+
+    font-size: 0.95rem;
+}
+
+
+.contact-card a {
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+}
+
+
+.contact-card a:hover {
+    color: var(--primary-dark);
+
+    text-decoration: underline;
+}
+
+
+/* WhatsApp button */
+
+.contact-action {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 9px 16px;
+
+    border-radius: 50px;
+
+    background: var(--primary);
+
+    color: var(--white) !important;
+
+    text-decoration: none !important;
+
+    font-size: 0.85rem;
+}
+
+
+.contact-action:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CONTACT MOBILE
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .contact-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .contact .section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        max-width: 450px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+}
+/* =========================================
+   FLOATING WHATSAPP BUTTON
+   ========================================= */
+
+.whatsapp-float {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 1500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 125px;
+    height: 48px;
+
+    padding: 0 20px;
+
+    background: #25D366;
+    color: #ffffff;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background: #1ebe5d;
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 600px) {
+
+    .whatsapp-float {
+        right: 15px;
+        bottom: 15px;
+
+        min-width: 110px;
+        height: 44px;
+
+        padding: 0 16px;
+
+        font-size: 14px;
+    }
+}
