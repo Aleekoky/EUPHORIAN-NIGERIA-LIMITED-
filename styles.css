@@ -1300,16 +1300,25 @@ footer {
 
 .quote-submit {
     width: 100%;
-
+    padding: 14px 20px;
     border: none;
-
+    border-radius: 50px;
+    background: #25D366;
+    color: #ffffff;
     cursor: pointer;
-
     font-family: inherit;
-
     font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+    transition: all 0.3s ease;
 }
 
+.quote-submit:hover {
+    background: #1ebe5d;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35);
+}
 
 @media (max-width: 600px) {
 
